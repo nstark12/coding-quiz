@@ -1,5 +1,6 @@
 /* Root tag */
 
+/* global selector */
 * {
     margin: 0;
     padding: 0;
@@ -7,15 +8,18 @@
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
+/* element selector styles body tag */
 body {
     background-color: rgb(52, 52, 52);
 }
 
+/* element selector styles any p tags */
 p {
     color: hotpink;
     font-size: 20px;
 }
 
+/* element selector styles any buttons */
 button {
     background-color: hotpink;
     outline: none;
@@ -25,10 +29,12 @@ button {
     padding: 5px 15px;
 }
 
+/* class selector styles outer-wrapper */
 .outer-wrapper {
     padding: 20px;
 }
 
+/* class selector styles top bar of page */
 .top-bar {
     display: flex;
     justify-content: space-between;

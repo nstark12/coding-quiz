@@ -58,6 +58,19 @@ h2 {
     padding: var(--padding);
 }
 
+form {
+    padding: var(--padding);
+}
+
+ul {
+    padding-bottom: 10px;
+    list-style: none;
+}
+
+li {
+    padding-bottom: 15px;
+}
+
 /* class selector styles outer-wrapper */
 .outer-wrapper {
     padding: var(--padding);
@@ -84,29 +97,20 @@ h2 {
 
 /* question section */
 .question {
-    display: none;
+    display: block;
 }
+
 
 /* class selector for completed-quiz screen */
 .completed-quiz {
     display: none;
+    text-align: center;
 }
 
 /* class selector for highscores screen */
 .highscores {
-    display: block;
+    display: none;
     text-align: center;
-}
-
-/* class selector for ordered list in highscores section*/
-.highscores ol {
-    padding-bottom: 20px;
-    list-style: none;
-    
-}
-
-.highscores li {
-    padding-bottom: 10px;
 }
 
 .highscores button {

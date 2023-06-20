@@ -1,4 +1,7 @@
 /* Root tag */
+:root {
+    --padding: 20px;
+}
 
 /* global selector */
 * {
@@ -6,6 +9,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family:Georgia, 'Times New Roman', Times, serif;
+    color: white;
 }
 
 /* element selector styles body tag */
@@ -29,9 +33,36 @@ button {
     padding: 5px 15px;
 }
 
+header {
+    text-align: center;
+    display: none;
+}
+
+header h1 {
+    padding: var(--padding);
+}
+
+header p {
+    padding: 5px 20px;
+}
+
+header button {
+    margin: 20px;
+}
+
+main {
+    display: block;
+}
+
+h2 {
+    padding: var(--padding);
+}
+
 /* class selector styles outer-wrapper */
 .outer-wrapper {
-    padding: 20px;
+    padding: var(--padding);
+    height: 100%;
+    
 }
 
 /* class selector styles top bar of page */
@@ -40,3 +71,44 @@ button {
     justify-content: space-between;
 }
 
+/* class selector styles inner-wrapper */
+.inner-wrapper, main {
+    background: black;
+    height: 100%;
+    width: 50%;
+    margin: 150px auto;
+    
+}
+
+/* main quiz content */
+
+/* question section */
+.question {
+    display: none;
+}
+
+/* class selector for completed-quiz screen */
+.completed-quiz {
+    display: none;
+}
+
+/* class selector for highscores screen */
+.highscores {
+    display: block;
+    text-align: center;
+}
+
+/* class selector for ordered list in highscores section*/
+.highscores ol {
+    padding-bottom: 20px;
+    list-style: none;
+    
+}
+
+.highscores li {
+    padding-bottom: 10px;
+}
+
+.highscores button {
+    margin-bottom: 20px;
+}

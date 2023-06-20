@@ -7,7 +7,7 @@
     <title>Coding Quiz</title>
 </head>
 <body>
-    <!-- main container -->
+    <!-- outer wrapper -->
     <div class="outer-wrapper" id="outer-wrapper">
 
         <!-- navbar section -->
@@ -16,14 +16,50 @@
             <p>Timer: 00:00</p>
         </div>
 
-        <!-- inner div -->
+        <!-- inner wrapper -->
         <div class="inner-wrapper" id="inner-wrapper">
             <!-- header/intro -->
-            <header class="intro" id="intro"></header>
+            <header class="intro" id="intro">
+                <h1>Coding Quiz Challenge</h1>
+                <p>Try to answer the following code-related questions with the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+                <button>Start Quiz</button>
+            </header>
 
             <!-- main quiz content -->
             <main>
 
+                   <section class="question">
+                        <h2>Question Here</h2>
+                        <ul>
+                            <!-- will be generated in JS -->
+                            <li><button>Answer 1</button></li>
+                            <li><button>Answer 2</button></li>
+                            <li><button>Answer 3</button></li>
+                            <li><button>Answer 4</button></li>
+                        </ul>
+                   </section>            
+
+                   <section class="completed-quiz">
+                        <h2>All done!</h2>
+                        <p>Your Score: 00</p>
+                        <div>
+                            <label for="">Enter initials</label>
+                            <input type="">
+                            <button>Submit</button>
+                        </div>
+                   </section>
+
+                   <section class="highscores">
+                        <h2>Highscores: </h2>
+                        <ol>
+                            <!-- will be generated in JS -->
+                            <li>NS - 20</li>
+                            <li>NS - 50</li>
+                            <li>NS - 55</li>
+                        </ol>
+                        <button>Go Back</button>
+                        <button>Clear Highscores</button>
+                   </section>
 
             </main>
         </div>

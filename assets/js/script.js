@@ -179,13 +179,14 @@ function clearScores() {
 } clearBtn.addEventListener("click", clearScores);
 
 
-
 // click event to start quiz
 startBtn.addEventListener("click", quizStart);
 
 // click event to submit name
 submitBtn.addEventListener("click", saveScore);
 
+// click event to show highscore screen
 viewHighscores.addEventListener("click", showScores);
 
+// runs function
 printScores();

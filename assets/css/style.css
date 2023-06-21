@@ -81,10 +81,12 @@ li {
     padding-bottom: 15px;
 }
 
+/* element selector styles all anchor tags */
 a {
     text-decoration: none;
 }
 
+/* element selector styles text input */
 input[type="text"] {
     font-size: 100%;
     color: black;
@@ -119,8 +121,14 @@ input[type="text"] {
     border-top: 2px solid #ffffff;
 }
 
-
+/*  id selector styles specific start button that starts the quiz */
 #start {
+    display: block;
+    margin: 30px auto;
+}
+
+/* id selector styles specific submit button at end of quiz */
+#submit {
     display: block;
     margin: 30px auto;
 }

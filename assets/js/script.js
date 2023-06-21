@@ -38,6 +38,7 @@ var nameEl = document.querySelector("#name");
 var restartBtn = document.querySelector("#restart");
 var introEl = document.querySelector("#intro");
 var completeEl = document.querySelector("#completed-quiz");
+var helpEl = document.querySelector("#help");
 
 
 // initial state of quiz
@@ -63,11 +64,11 @@ function getQuestion() {
     // clear out old question choices
     optionsEl.innerHTML = "";
     // loop through choices
-    currentQuestion.choices.forEach(function(choice, i) {
+    currentQuestion.options.forEach(function(option, i) {
         // create button for each choice
         var optionBtn = document.createElement("button");
-        optionBtn.setAttribute("value", choice);
-        optionBtn.textContent = i + 1 + ". " + choice;
+        optionBtn.setAttribute("value", option);
+        optionBtn.textContent = option;
         optionBtn.addEventListener("click", questionClick);
         // display on page
         optionsEl.appendChild(optionBtn);
@@ -78,15 +79,33 @@ function getQuestion() {
 // deduct time for wrong answer
 // go to next question
 function questionClick() {
-    if(this.value !== questions[currentQuetionIdx].answer) {
+    if(this.value !== questions[currentQuestionIdx].answer) {
         time -= 5;
         if(time < 0) {
             time = 0;
         }
+        // show new time
         timerEl.textContent = time;
-    } else {
-
+        helpEl.textContent = "Incorrect!";
+    } else { 
+        helpEl.textContent = "Correct!";
     }
+    // time help on page to only show briefly then disappear
+    helpEl.removeAttribute("class");
+    setTimeout(function() {
+        helpEl.setAttribute("class", "hide");
+    }, 2000);
+
+    // go to next question
+    currentQuestionIdx++;
+
+    // if out of questions, end quiz
+    if (currentQuestionIdx === questions.length) {
+        quizEnd();
+    } else {
+        getQuestion();
+    }
+
 }
 
 

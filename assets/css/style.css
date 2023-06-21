@@ -1,4 +1,4 @@
-/* Root tag */
+/* Root tag css variables*/
 :root {
     --padding: 20px;
 }
@@ -33,40 +33,49 @@ button {
     padding: 5px 15px;
 }
 
+/* element selector styles header */
 header {
     text-align: center;
     display: none;
 }
 
+/* element selector styles h1 in header */
 header h1 {
     padding: var(--padding);
 }
 
+/* element selector styles p tag in header */
 header p {
     padding: 5px 20px;
 }
 
+/* element selector styles button in header */
 header button {
     margin: 20px;
 }
 
+/* element selector makes default main invisible */
 main {
-    display: block;
+    display: none;
 }
 
+/* element selector styles all h2 elements */
 h2 {
     padding: var(--padding);
 }
 
+/* element selector styles all forms */
 form {
     padding: var(--padding);
 }
 
+/* element selector styles all unordered lists */
 ul {
     padding-bottom: 10px;
     list-style: none;
 }
 
+/* element slector styles all list items */
 li {
     padding-bottom: 15px;
 }

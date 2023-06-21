@@ -31,6 +31,11 @@ button {
     font-size: 15px;
     border: 2px solid white;
     padding: 5px 15px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 /* element selector styles header */
@@ -56,6 +61,7 @@ header button {
 /* element selector styles all h2 elements */
 h2 {
     padding: var(--padding);
+    font-size: 20px;
 }
 
 /* element selector styles all forms */
@@ -75,6 +81,9 @@ li {
 }
 
 /* main quiz content */
+#questions {
+    text-align: left;
+}
 
 /* id selector for completed-quiz screen */
 #completed-quiz {
@@ -89,6 +98,21 @@ li {
 /* id selector for highscores button */
 #highscores button {
     margin-bottom: 20px;
+}
+
+/* id selector that styles the help popup that shows if questions was answered correctly */
+#help {
+    font-style: bold;
+    margin: 20px;
+    padding-top: 15px;
+    color: #fff;
+    border-top: 2px solid #ffffff;
+}
+
+
+#start {
+    display: block;
+    margin: 30px auto;
 }
 
 /* class selector hides section */
@@ -110,19 +134,12 @@ li {
 }
 
 /* class selector styles inner-wrapper */
-.inner-wrapper, main {
+.inner-wrapper {
     background: black;
     height: 100%;
     width: 50%;
     margin: 150px auto;
+    padding-bottom: 10px;
     
 }
 
-.help {
-    font-style: bold;
-    font-size: 120%;
-    margin-top: 20px;
-    padding-top: 15px;
-    color: #fff;
-    border-top: 2px solid #4B0082;
-}

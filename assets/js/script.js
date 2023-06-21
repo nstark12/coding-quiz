@@ -8,6 +8,7 @@ var submitBtn = document.querySelector("#submit");
 var nameEl = document.querySelector("#name");
 var restartBtn = document.querySelector("#restart");
 var introEl = document.querySelector("#intro");
+var completeEl = document.querySelector("#completed-quiz");
 
 // question array
 var questions = [
@@ -71,6 +72,15 @@ function getQuestion() {
 // function to end quiz
     // stop timer
     // show final schore
+
+function quizEnd() {
+    clearInterval(myTimer);
+    completeEl.removeAttribute("class");
+    var finalScore = document.querySelector("#final-score");
+    finalScore.textContent = time;
+    questionsEl.setAttribute("class", "hide");
+
+}
 
 // function to end quiz if timer runs out
 function tick() {

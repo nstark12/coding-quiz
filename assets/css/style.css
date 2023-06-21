@@ -53,11 +53,6 @@ header button {
     margin: 20px;
 }
 
-/* element selector makes default main invisible */
-main {
-    display: none;
-}
-
 /* element selector styles all h2 elements */
 h2 {
     padding: var(--padding);
@@ -110,7 +105,7 @@ li {
 /* main quiz content */
 
 /* class selector for completed-quiz screen */
-.completed-quiz {
+#completed-quiz {
     text-align: center;
 }
 

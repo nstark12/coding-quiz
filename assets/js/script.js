@@ -120,6 +120,7 @@ function quizEnd() {
     finalScore.textContent = time;
     // hide questions
     questionsEl.setAttribute("class", "hide");
+    gradeEl.setAttribute("class", "hide");
 
 }
 

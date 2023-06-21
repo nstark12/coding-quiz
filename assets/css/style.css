@@ -74,6 +74,22 @@ li {
     padding-bottom: 15px;
 }
 
+/* main quiz content */
+
+/* id selector for completed-quiz screen */
+#completed-quiz {
+    text-align: center;
+}
+
+/* id selector for highscores screen */
+#highscores {
+    text-align: center;
+}
+
+/* id selector for highscores button */
+#highscores button {
+    margin-bottom: 20px;
+}
 
 /* class selector hides section */
 .hide {
@@ -102,18 +118,3 @@ li {
     
 }
 
-/* main quiz content */
-
-/* class selector for completed-quiz screen */
-#completed-quiz {
-    text-align: center;
-}
-
-/* class selector for highscores screen */
-.highscores {
-    text-align: center;
-}
-
-.highscores button {
-    margin-bottom: 20px;
-}

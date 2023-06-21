@@ -1,15 +1,3 @@
-// vars to reference DOM elements
-var viewHighscores = document.querySelector("#view-highscores");
-var timerEl = document.querySelector("#timer");
-var startBtn = document.querySelector("#start");
-var optionsEl = document.querySelector("#options");
-var questionsEl = document.querySelector("#questions");
-var submitBtn = document.querySelector("#submit");
-var nameEl = document.querySelector("#name");
-var restartBtn = document.querySelector("#restart");
-var introEl = document.querySelector("#intro");
-var completeEl = document.querySelector("#completed-quiz");
-
 // question array
 var questions = [
     {
@@ -39,6 +27,18 @@ var questions = [
     }
 ];
 
+// vars to reference DOM elements
+var viewHighscores = document.querySelector("#view-highscores");
+var timerEl = document.querySelector("#timer");
+var startBtn = document.querySelector("#start");
+var optionsEl = document.querySelector("#options");
+var questionsEl = document.querySelector("#questions");
+var submitBtn = document.querySelector("#submit");
+var nameEl = document.querySelector("#name");
+var restartBtn = document.querySelector("#restart");
+var introEl = document.querySelector("#intro");
+var completeEl = document.querySelector("#completed-quiz");
+
 
 // initial state of quiz
 var currentQuestionIdx = 0;
@@ -57,27 +57,48 @@ function quizStart() {
 
 // loop through question array & create list with buttons
 function getQuestion() {
-    var currentQuestion = [currentQuestionIdx];
+    var currentQuestion = questions[currentQuestionIdx];
     var titleEl = document.querySelector("#question-title");
+    titleEl.textContent = currentQuestion.title;
+    // clear out old question choices
+    optionsEl.innerHTML = "";
+    // loop through choices
+    currentQuestion.choices.forEach(function(choice, i) {
+        // create button for each choice
+        var optionBtn = document.createElement("button");
+        optionBtn.setAttribute("value", choice);
+        optionBtn.textContent = i + 1 + ". " + choice;
+        optionBtn.addEventListener("click", questionClick);
+        // display on page
+        optionsEl.appendChild(optionBtn);
+    })
     
+}
+// check for right answer
+// deduct time for wrong answer
+// go to next question
+function questionClick() {
+    if(this.value !== questions[currentQuetionIdx].answer) {
+        time -= 5;
+        if(time < 0) {
+            time = 0;
+        }
+        timerEl.textContent = time;
+    } else {
+
+    }
 }
 
 
-// check for right answer
-
-// deduct time for wrong answer
-
-// go to next question
-
 // function to end quiz
-    // stop timer
-    // show final schore
-
 function quizEnd() {
+    // stops timer
     clearInterval(myTimer);
     completeEl.removeAttribute("class");
+    // show final score
     var finalScore = document.querySelector("#final-score");
     finalScore.textContent = time;
+    // hide questions
     questionsEl.setAttribute("class", "hide");
 
 }
@@ -94,5 +115,4 @@ function tick() {
 // save score and initials to localStorage 
 
 // click event to start quiz
-
 startBtn.addEventListener("click", quizStart);

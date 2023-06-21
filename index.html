@@ -12,8 +12,8 @@
 
         <!-- navbar section -->
         <div class="top-bar" id="top-bar">
-            <button>View Highscores</button>
-            <p>Timer: 00:00</p>
+            <button id="view-highscores">View Highscores</button>
+            <p>Timer: <span id="timer">0</span></p>
         </div>
 
         <!-- inner wrapper -->
@@ -22,34 +22,28 @@
             <header class="intro" id="intro">
                 <h1>Coding Quiz Challenge</h1>
                 <p>Try to answer the following code-related questions with the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-                <button>Start Quiz</button>
+                <button id="start">Start Quiz</button>
             </header>
 
             <!-- main quiz content -->
             <main>
 
-                   <section class="question">
-                        <h2>Question Here</h2>
-                        <ul>
-                            <!-- will be generated in JS -->
-                            <li><button>Answer 1</button></li>
-                            <li><button>Answer 2</button></li>
-                            <li><button>Answer 3</button></li>
-                            <li><button>Answer 4</button></li>
-                        </ul>
+                   <section class="question hide" id="questions">
+                        <h2 id="question-title"></h2>
+                        <div class="options" id="options"></div>
                    </section>            
 
-                   <section class="completed-quiz">
+                   <section class="completed-quiz hide" id="completed-quiz">
                         <h2>All done!</h2>
-                        <p>Your Score: 00</p>
+                        <p>Your Score: <span id="final-score"></span></p>
                         <form>
-                            <label for="">Enter initials</label>
-                            <input type="">
-                            <button>Submit</button>
+                            <label>Enter initials</label>
+                            <input type="text" id="name">
+                            <button id="submit">Submit</button>
                         </form>
                    </section>
 
-                   <section class="highscores">
+                   <section class="highscores hide" id="highscores">
                         <h2>Highscores: </h2>
                         <ul>
                             <!-- will be generated in JS -->
@@ -57,8 +51,8 @@
                             <li>NS - 50</li>
                             <li>NS - 55</li>
                         </ul>
-                        <button>Go Back</button>
-                        <button>Clear Highscores</button>
+                        <button><a href="index.html">Go Back</a></button>
+                        <button id="clear">Clear Highscores</button>
                    </section>
 
             </main>

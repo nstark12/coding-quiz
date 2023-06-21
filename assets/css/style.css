@@ -36,7 +36,6 @@ button {
 /* element selector styles header */
 header {
     text-align: center;
-    display: none;
 }
 
 /* element selector styles h1 in header */
@@ -80,6 +79,12 @@ li {
     padding-bottom: 15px;
 }
 
+
+/* class selector hides section */
+.hide {
+    display: none;
+}
+
 /* class selector styles outer-wrapper */
 .outer-wrapper {
     padding: var(--padding);
@@ -104,21 +109,13 @@ li {
 
 /* main quiz content */
 
-/* question section */
-.question {
-    display: block;
-}
-
-
 /* class selector for completed-quiz screen */
 .completed-quiz {
-    display: none;
     text-align: center;
 }
 
 /* class selector for highscores screen */
 .highscores {
-    display: none;
     text-align: center;
 }
 

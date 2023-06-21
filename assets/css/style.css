@@ -101,7 +101,7 @@ li {
 }
 
 /* id selector that styles the help popup that shows if questions was answered correctly */
-#help {
+#grade {
     font-style: bold;
     margin: 20px;
     padding-top: 15px;

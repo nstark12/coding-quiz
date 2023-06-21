@@ -38,7 +38,7 @@ var nameEl = document.querySelector("#name");
 var restartBtn = document.querySelector("#restart");
 var introEl = document.querySelector("#intro");
 var completeEl = document.querySelector("#completed-quiz");
-var helpEl = document.querySelector("#help");
+var gradeEl = document.querySelector("#grade");
 
 
 // initial state of quiz
@@ -86,14 +86,14 @@ function questionClick() {
         }
         // show new time
         timerEl.textContent = time;
-        helpEl.textContent = "Incorrect!";
+        gradeEl.textContent = "Incorrect!";
     } else { 
-        helpEl.textContent = "Correct!";
+        gradeEl.textContent = "Correct!";
     }
     // time help on page to only show briefly then disappear
-    helpEl.removeAttribute("class");
+    gradeEl.removeAttribute("class");
     setTimeout(function() {
-        helpEl.setAttribute("class", "hide");
+        gradeEl.setAttribute("class", "hide");
     }, 2000);
 
     // go to next question

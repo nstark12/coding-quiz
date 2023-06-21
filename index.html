@@ -39,21 +39,15 @@
                         <h2>All done!</h2>
                         <p>Your Score: <span id="final-score"></span></p>
                         <form>
-                            <label>Enter initials</label>
-                            <input type="text" id="name">
-                            <button id="submit">Submit</button>
+                            <label for="initial-area">Enter initials</label>
+                            <input type="text" id="name" name="initial-area">
+                            <button id="submit" type="submit">Submit</button>
                         </form>
                    </section>
 
                    <section class="hide" id="highscores">
                         <h2>Highscores: </h2>
-                        <ul>
-                            <!-- will be generated in JS -->
-                            <li>NS - 20</li>
-                            <li>NS - 50</li>
-                            <li>NS - 55</li>
-                        </ul>
-                        <button id="restart">Restart</button>
+                        <button id="restart"><a href="index.html">Restart</a></button>
                         <button id="clear">Clear Highscores</button>
                    </section>
 

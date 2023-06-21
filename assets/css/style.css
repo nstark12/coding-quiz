@@ -67,6 +67,7 @@ h2 {
 /* element selector styles all forms */
 form {
     padding: var(--padding);
+    color: black;
 }
 
 /* element selector styles all unordered lists */
@@ -78,6 +79,15 @@ ul {
 /* element slector styles all list items */
 li {
     padding-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+input[type="text"] {
+    font-size: 100%;
+    color: black;
 }
 
 /* main quiz content */

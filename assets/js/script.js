@@ -39,6 +39,7 @@ var restartBtn = document.querySelector("#restart");
 var introEl = document.querySelector("#intro");
 var completeEl = document.querySelector("#completed-quiz");
 var gradeEl = document.querySelector("#grade");
+var scoreEl = document.querySelector("#highscores");
 
 
 // initial state of quiz
@@ -132,6 +133,38 @@ function tick() {
 }
 
 // save score and initials to localStorage 
+function saveScore() {
+    // get value of input
+    var name = nameEl.value;
+    if (name !== "") {
+        // get from localStorage if empty, or if no values in localStorage set to empty array
+        var scores = JSON.parse(local.Storage.getItem("scores")) || [];
+
+        var newScore = {
+            score: time,
+            name: name
+        };
+        // save to localStorage
+        scores.push(newScore);
+        localStorage.setItem("scores", JSON.stringify(scores));
+    }
+}
+
+// function to show highscores
+function showScores() {
+    introEl.setAttribute("class", "hide");
+    questionsEl.setAttribute("class", "hide");
+    completeEl.setAttribute("class", "hide");
+    scoreEl.removeAttribute("class");
+
+}
 
 // click event to start quiz
 startBtn.addEventListener("click", quizStart);
+
+// click event to submit name
+submitBtn.addEventListener("click", saveScore);
+
+viewHighscores.addEventListener("click", showScores);
+
+restartBtn.addEventListener("click", quizStart);

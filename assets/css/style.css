@@ -71,7 +71,7 @@ form {
 }
 
 /* element selector styles all unordered lists */
-ul {
+ul, ol {
     padding-bottom: 10px;
     list-style: none;
 }

@@ -135,10 +135,10 @@ function tick() {
 // save score and initials to localStorage 
 function saveScore() {
     // get value of input
-    var name = nameEl.value;
+    var name = nameEl.value.trim();
     if (name !== "") {
         // get from localStorage if empty, or if no values in localStorage set to empty array
-        var scores = JSON.parse(local.Storage.getItem("scores")) || [];
+        var scores = JSON.parse(localStorage.getItem("scores")) || [];
 
         var newScore = {
             score: time,
@@ -176,8 +176,7 @@ function printScores() {
 function clearScores() {
     localStorage.removeItem("scores");
     location.reload();
-    clearBtn.addEventListener("click", clearScores);
-} 
+} clearBtn.addEventListener("click", clearScores);
 
 
 

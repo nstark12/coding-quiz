@@ -3,10 +3,11 @@ var viewHighscores = document.querySelector("#view-highscores");
 var timerEl = document.querySelector("#timer");
 var startBtn = document.querySelector("#start");
 var optionsEl = document.querySelector("#options");
-var questionsEl = document.querySelectory("#questions");
+var questionsEl = document.querySelector("#questions");
 var submitBtn = document.querySelector("#submit");
 var nameEl = document.querySelector("#name");
 var restartBtn = document.querySelector("#restart");
+var introEl = document.querySelector("#intro");
 
 // question array
 var questions = [
@@ -39,12 +40,26 @@ var questions = [
 
 
 // initial state of quiz
-
+var currentQuestionIdx = 0;
+// 10 seconds per question
+var time = questions.length * 10;
+var myTimer;
 
 // function to start the game & hide intro
-
+function quizStart() {
+    myTimer = setInterval(tick, 1000);
+    timerEl.textContent = time;
+    introEl.setAttribute("class", "hide");
+    questionsEl.removeAttribute("class", "hide");
+    getQuestion();
+}
 
 // loop through question array & create list with buttons
+function getQuestion() {
+    var currentQuestion = [currentQuestionIdx];
+    var titleEl = document.querySelector("#question-title");
+    
+}
 
 
 // check for right answer
@@ -58,7 +73,16 @@ var questions = [
     // show final schore
 
 // function to end quiz if timer runs out
+function tick() {
+    time--;
+    timerEl.textContent = time;
+    if (time <= 0) {
+        quizEnd();
+    }
+}
 
 // save score and initials to localStorage 
 
+// click event to start quiz
 
+startBtn.addEventListener("click", quizStart);

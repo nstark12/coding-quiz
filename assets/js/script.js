@@ -35,11 +35,11 @@ var optionsEl = document.querySelector("#options");
 var questionsEl = document.querySelector("#questions");
 var submitBtn = document.querySelector("#submit");
 var nameEl = document.querySelector("#name");
-var restartBtn = document.querySelector("#restart");
 var introEl = document.querySelector("#intro");
 var completeEl = document.querySelector("#completed-quiz");
 var gradeEl = document.querySelector("#grade");
 var scoreEl = document.querySelector("#highscores");
+var clearBtn = document.querySelector("#clear");
 
 
 // initial state of quiz
@@ -150,14 +150,36 @@ function saveScore() {
     }
 }
 
-// function to show highscores
+// function to show highscores screen
 function showScores() {
     introEl.setAttribute("class", "hide");
     questionsEl.setAttribute("class", "hide");
     completeEl.setAttribute("class", "hide");
     scoreEl.removeAttribute("class");
-
 }
+
+// function to retrieve scores and rank from localStorage
+function printScores() {
+   var scores = JSON.parse(localStorage.getItem("scores")) || [];
+    scores.sort(function(a, b) {
+        return b.score - a.score;
+    });
+    scores.forEach(function(score) {
+        var liEl = document.createElement("li");
+        liEl.textContent = score.name + " - " + score.score;
+        var olEl = document.querySelector("#olEl");
+        olEl.appendChild(liEl);
+    });
+}
+
+// clear old scores
+function clearScores() {
+    localStorage.removeItem("scores");
+    location.reload();
+    clearBtn.addEventListener("click", clearScores);
+} 
+
+
 
 // click event to start quiz
 startBtn.addEventListener("click", quizStart);
@@ -167,4 +189,4 @@ submitBtn.addEventListener("click", saveScore);
 
 viewHighscores.addEventListener("click", showScores);
 
-restartBtn.addEventListener("click", quizStart);
+printScores();

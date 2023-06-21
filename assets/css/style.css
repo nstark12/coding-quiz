@@ -92,6 +92,15 @@ input[type="text"] {
     color: black;
 }
 
+/* id selector that styles the help popup that shows if questions was answered correctly */
+#grade {
+    font-style: bold;
+    margin: 20px;
+    padding-top: 15px;
+    color: #fff;
+    border-top: 2px solid #ffffff;
+}
+
 /* main quiz content */
 #questions {
     text-align: left;
@@ -110,15 +119,6 @@ input[type="text"] {
 /* id selector for highscores button */
 #highscores button {
     margin-bottom: 20px;
-}
-
-/* id selector that styles the help popup that shows if questions was answered correctly */
-#grade {
-    font-style: bold;
-    margin: 20px;
-    padding-top: 15px;
-    color: #fff;
-    border-top: 2px solid #ffffff;
 }
 
 /*  id selector styles specific start button that starts the quiz */

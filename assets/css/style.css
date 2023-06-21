@@ -38,6 +38,12 @@ button {
 
 }
 
+/* adds hover element to buttons */
+button:hover {
+    cursor: pointer;
+    background-color: magenta;
+}
+
 /* element selector styles header */
 header {
     text-align: center;
